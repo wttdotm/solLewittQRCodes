@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Page Title</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="">
+<style>
+  body {
+  font-family: 'Source Code Pro', monospace;
+}
+@import url('https://web.archive.org/web/20230512043741cs_/https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<body>
+  <p>Input the QR code you want to make (max 8 characters)</p>
+  <form id="qrForm">
+    <h1>input</h1>
+    <input type="text" id="qrSource" class="form-control" placeholder="max 8 characters">
+    <button type="submit">Submit</button>
+  </form>
+  <script>
+    let qrForm = document.getElementById("qrForm");
+    console.log(qrForm)
+    qrForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+  
+    let qrSource = document.getElementById("qrSource");
+  
+    if (qrSource.value == "") {
+      alert('lol u forgot to enter something')
+      return
+    } else if (qrSource.length > 8) {
+      alert('too long plz choose dif input')
+      return
+    } else {
+      window.location.href = `./qrTesting.html?qrCode=${qrSource.value}`;
+    }
+    return
+  });
+  </script>
+</body>
+</html>
