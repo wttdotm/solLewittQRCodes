@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
-<title>Page Title</title>
+<title>LeWitt QR Code Generator</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="">
 <style>
   body {
-    font-family: 'Source Code Pro', monospace; display: 'flex'; align-items: 'center'; justify-content: 'center';
+    font-family: 'Source Code Pro', monospace; 
+  }
+
+  .inputClass {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+    margin-top: 30vh; 
+    text-align: center;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  
+  .result {
+    display: 'flex'; 
+    align-items: 'center'; 
+    justify-content: 'center';
     text-align: left; 
-    margin-top: 5vh; 
-    padding-left: 15vw; 
-    padding-right: 15vw;
-    margin-bottom: 5vh
+    margin-top: 8vh; 
+    padding-left: 10vw; 
+    padding-right: 10vw;
+    margin-bottom: 10vh
   }
 
   a {
@@ -23,18 +40,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <body>
 
-<div id="input" style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-top: 30vh; text-align: center;">
+<div id="input" class="inputClass">
   <h3>Hello, welcome to the Sol LeWitt QR Code Generator</h3>
-  <p>Input the QR code you want to make (max 8 characters)<br/>and you will get instructions for how to draw it.</p><br/>
+  <p>Input the QR code you want to make (max 8 characters) and you will get instructions for how to draw it.</p><br/>
   <form id="qrForm">
     <input type="text" id="qrSource" class="form-control" placeholder="max 8 characters">
     <button type="submit">Submit</button>
   </form>
 </div>
 
-<div id="result" hidden>
+<div id="result" class="result" hidden>
   <!-- I would like this qrcode to be below the toggle, but it doesnt show if i do that -->
-  <div id="instructions">
+  <div id="instructions" class="instructions">
     <h2>Instructions for a QR Code</h2>
     <h4><i>By WTTDOTM and you</i></h4>
     <h5>Text and HTML/CSS/JS, 2024. <a href="javascript:toggleQRCode()">Toggle QR Code On/Off</a>. <a href="javascript:toggleInputVsInstructions()">Make a different code.</a></h4>
